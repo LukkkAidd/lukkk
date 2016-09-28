@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>BID之家</title>
+    <style type="text/css">
+        *{margin: 0;padding: 0;}
+        body{
+            background: #aaaaaa;
+        }
+        /*头部格式********************************/
+        header{
+            width: 100%;
+            background:black;
+            position: relative;
+            height: 80px;
+        }
+        header h1{
+            color: red;
+            padding: 20px;
+            font-size: 30px;
+        }
+        header ul{
+            position: absolute;top:0;right:10px;
+        }
+        header ul li{
+            display: block;
+            float:left;
+            padding:30px 10px;
+            width:80px;
+        }
+        header ul li a{
+            text-align: center;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        header ul li:hover{
+            background: #E36E18;
+            border-bottom:1px solid #777777;
+        }
+        /*主体main部分****************************/
+        article,aside{
+            background: white;
+            border:3px solid #777777;
+            padding: 20px;
+            margin: 10px;
+        }
+        .author,.time{
+            color:#aaaaaa;
+            font-size: 12px;
+        }
+        article p{
+            text-indent: 2em;
+            font-size:20px;
+        }
+        article ul li{
+            list-style-type:none;/*去掉列表前的点*/
+        }
+        article .img li{
+            border: 3px solid #aaaaaa;
+            margin-bottom:10px ;
+            width: 700px;
+            background: #AEBDCC;
+        }
+        article .img li span{
+            display: block;/*将span变成块级元素*/
+            margin:0;
+            text-align: center;
+            padding: 10px;
+            background: #E36E18;
+        }
+        article .img li img{
+            padding: 10px;
+        }
+        article ol{
+            display: block;
+            padding: 20px 10px;
+            margin-left:20px ;
+        }
+        article table{
+            border-collapse: collapse;
+            width: 100%;
+            padding:15px;
+            line-height:30px;
+        }
+        article table tr th,td{
+            padding-left: 10px;
+        }
+
+        article table tr th{
+            background: #2e2e2e;
+            text-align: left;
+            color: white;
+        }
+        article .total{
+            color: black;
+            background: #aaaaaa;
+        }
+        /*aside边栏部分*********************************/
+        aside h4{
+            border-left:3px solid #aaaaaa ;
+            height: 20px;
+            padding: 5px;
+            margin-right:20px ;
+        }
+        aside form div{
+            font-size:16px ;
+            margin: 20px 0;
+        }
+        aside form div .tips{
+            float:left;/*添加后个人描述四个字才和文本域上对齐*/
+            text-align: right;
+            width: 40%;
+            padding-right:20px ;
+        }
+        aside form div p{
+            margin-left:40%;
+            padding:15px;
+            color: #aaaaaa;
+            font-size: 14px;
+        }
+        aside form .submitbuttom{
+            width: 100%;
+            padding: 20px;
+            text-align: center;
+            font-size: 20px;
+            color: white;
+            background: blue;
+            border-radius: 10px;
+            border: none;
+        }
+        aside form .submitbuttom:hover{
+            background: #E36E18;
+        }
+        /*footer底部********************************/
+        footer{
+            width: 100%;
+            font-size: 16px;
+            background: black;
+            height: 60px;
+            color: white;
+            text-align:center;
+            line-height: 60px;
+        }
+    </style>
+</head>
+<body>
+<header class="nav">
+    <h1>BID之家</h1>
+    <nav class="navigation">
+        <ul>
+            <li><a href="task_1cz.html"> 导航链接一</a></li>
+            <li><a href="task_1cz.html"> 导航链接二</a></li>
+            <li><a href="task_1cz.html"> 导航链接三</a></li>
+            <li><a href="task_1cz.html"> 导航链接四</a></li>
+        </ul>
+    </nav>
+</header>
+<main>
+    <article>
+         <h1>BID服饰</h1>
+         <h2>BID新款</h2>
+        <span class="author">文章作者</span><span class="time">发表时间</span>
+        <p>米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米
+            兰时装周米兰时装周米兰时装周<a href="task_1cz.html">米兰时装周</a>米兰时装周米兰时装周米兰时 装周米兰时装周米兰时装周米兰时装周米
+            兰时装周米兰时装周.
+        </p>
+        <img src="http://p1.bqimg.com/575033/8bb75299e8d8a7e8.jpg" alt="米兰时装周"><!--这里的alt表示的是对图片的备注信息-->
+        <p>
+            米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米
+            兰时装周米兰时装周米兰时装周<a href="task_1cz.html">米兰时装周</a>米兰时装周米兰时装周米兰时 装周米兰时装周米兰时装周米兰时装周米
+            兰时装周米兰时装周.
+        </p>
+    </article>
+    <article>
+        <h1>BID服饰</h1>
+        <h2>BID新款</h2>
+        <span class="author">文章作者</span><span class="time">发表时间</span>
+        <p>米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米兰时装周米
+            兰时装周米兰时装周米兰时装周<a href="task_1cz.html">米兰时装周</a>米兰时装周米兰时装周米兰时 装周米兰时装周米兰时装周米兰时装周米
+            兰时装周米兰时装周.
+        </p>
+        <img src="http://p1.bqimg.com/575033/d094714326efa741.jpg" alt="米兰时装周"><!--这里的alt表示的是对图片的备注信息-->
+        <ul>
+            <li>列表项目一</li>
+            <li>列表项目二</li>
+            <li>列表项目三</li>
+        </ul>
+    </article>
+    <article>
+        <h2>米兰时装周图片</h2>
+        <ul class="img">
+            <li><span>时装周精选</span><img src="http://p1.bqimg.com/575033/8bb75299e8d8a7e8.jpg" alt="米兰时装周"></li>
+            <li><span>时装周精选</span><img src="http://p1.bqimg.com/575033/262ee83a033d527e.jpg" alt="米兰时装周"></li>
+            <li><span>时装周精选</span><img src="http://p1.bqimg.com/575033/6f1f371c3498e919.jpg" alt="米兰时装周"></li>
+            <li><span>时装周精选</span><img src="http://p1.bqimg.com/575033/4bceaed4e5bccf9b.jpg" alt="米兰时装周"></li>
+        </ul>
+    </article>
+    <article>
+        <h1>最后一篇文章标题</h1>
+        <h2>文章二级标题</h2>
+        <span class="author">文章作者</span><span class="time">发表时间</span>
+        <ol>
+            <li>排名1</li>
+            <li>排名2</li>
+            <li>排名3</li>
+        </ol>
+        <P>
+            下面是一个表格，我这里给表格加了一个border="1"好让你看出来是一个表格，你们不用写
+            html时候不需要添加
+        </P>
+        <table border="1">
+            <tr>
+                <th>表头</th>
+                <th>表头</th>
+                <th>表头</th>
+            </tr>
+            <tr>
+                <td>内容</td>
+                <td>内容</td>
+                <td><a href="task_1cz.html"> 操作</a></td>
+            </tr>
+            <tr>
+                <td>内容</td>
+                <td>内容</td>
+                <td><a href="task_1cz.html"> 操作</a></td>
+            </tr>
+            <tr>
+                <td>内容</td>
+                <td>内容</td>
+                <td><a href="task_1cz.html"> 操作</a></td>
+            </tr>
+            <tr>
+                <td>内容</td>
+                <td>内容</td>
+                <td><a href="task_1cz.html"> 操作</a></td>
+            </tr>
+            <tr class="total">
+                <td><strong>总计</strong></td>
+                <td colspan="2"><strong>1000</strong></td>
+            </tr>
+        </table>
+    </article>
+</main>
+<aside>
+    <h4>这里以后是一个侧栏，这是侧栏的标题</h4>
+    <form action="save.php" method="post">
+    <!--这里的action="save.php"表示的是浏览者输入的数据被传送到某个地方，这个地方为save.php的页面
+    method为数据传输的方式，通过get/post，来完成-->
+        <div>
+           <label class="tips">请输入邮箱地址</label>
+           <input type="text" placeholder="请输入邮箱地址"/>
+           <!--这里的placeholder：占位符，表示在输入框内初始的文字-->
+           <p>邮箱地址请按要求格式输入</p>
+        </div>
+        <div>
+           <label class="tips">请输入密码</label>
+           <input type="password" placeholder="请输入密码"/>
+        </div>
+        <div>
+           <label class="tips">请再次输入密码</label>
+           <input type="password" placeholder="请再次输入密码"/>
+           <p>密码请为6-16位英文数字</p>
+        </div>
+    </form>
+    <form>
+        <div>
+           <label class="tips">性别</label>
+           <input type="radio" value="男" name="sex" checked="checked">
+           <label>男</label>
+           <input type="radio" value="女" name="sex">
+           <label>女</label>
+           <!--input type="radio" ：表示单选框，value="#"：表示数据到服务器的值；
+         name="#" ：表示为控件命名，同一组单选按钮的name值一定要一样；
+         checked="checked"：表示该选项默认被选中-->
+        </div>
+    </form>
+    <form>
+        <div>
+           <label class="tips">城市</label>
+           <select>
+               <option value="北京" selected="selected">北京</option>
+               <option value="上海">上海</option>
+               <option value="深圳">深圳</option>
+               <option value="广州">广州</option>
+               <!--option:表示选项；selected表示默认选项 -->
+           </select>
+        </div>
+    </form>
+    <form>
+        <div>
+           <label class="tips">爱好</label>
+           <input type="checkbox" value="sport" name="hobby"/>
+           <label>运动</label>
+           <input type="checkbox" value="art" name="hobby"/>
+           <label>艺术</label>
+           <input type="checkbox" value="science" name="hobby"/>
+           <label>科学</label>
+           <!--input type="checkbox"：表示复选框 -->
+        </div>
+    </form>
+    <form>
+        <div>
+           <label class="tips">个人描述</label>
+           <textarea cols="50" rows="10">请在这里输入个人描述</textarea>
+           <!--textarea：表示文本区域；cols：输入区域的列数；rows：输入区域的行数 -->
+        </div>
+    </form>
+    <form>
+        <input type="submit" class="submitbuttom" value="确认提交"/>
+    </form>
+</aside>
+<footer>
+    <P>版权所有©Lukkk</P>
+</footer>
+</body>
+</html>

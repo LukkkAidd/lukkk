@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>三栏式布局</title>
+    <style type="text/css">
+    body{
+        margin: 0;
+        padding: 0;
+
+    }
+    main aside{
+        border: 1px solid #999999;
+        background: #eeeeee;
+        margin: 10px;
+        position: relative;
+        height: 700px;/*通过设定高度来，防止因为宽度溢出而出现边框不完整的现象*/
+    }
+
+    main aside div{
+        border: 1px solid #E36E18;
+    }
+    main aside .column1{
+        width: 200px;
+        position: absolute;left: 20px;top: 20px;
+
+    }
+    main aside .column2{
+    margin:20px 160px 0 240px;
+    float:left;
+        height: 500px;
+    }
+    main aside .column3{
+        width: 122px;
+        height: 600px;
+        position: absolute;right: 20px;top: 20px;
+    }
+        .column1 .logo{
+            padding: 20px;
+        }
+        .column1 p{
+            margin-top: 20px;
+            margin-right: 5px;
+            padding: 5px;
+            float: right;
+        }
+        main aside div article p{
+            text-indent: 2em;
+        }
+        main aside div ul{
+            padding:10px;
+            margin-top: 5px;
+        }
+        main aside div ul li{
+            border: 1px solid #E36E18;
+            list-style-type:none;/*去掉列表前的点*/
+            padding:10px;
+            width: 80px;
+            margin-bottom: 10px;
+
+        }
+    main aside div ul li span{
+        display:block;
+        margin-top: 0;
+        padding: 5px;
+    }
+    </style>
+</head>
+<body>
+<main>
+    <aside>
+        <div class="column1">
+            <img src="http://p1.bqimg.com/575033/194feb52b06a71b8.jpg" class="logo" alt="团队logo">
+            <p>LLAiDD</p>
+        </div>
+        <div class="column2">
+            <article class="introduce">
+                <h1>关于团队的介绍</h1>
+                <h2>可以简单介绍团队名称的来历，或分别介绍你们的团队成员</h2>
+                <P>
+                    百度前端技术学院的课程任务是由百度前端工程师专为对前端不同掌握程度的同学
+                    设计。我们尽力保证课程内容的质量以及学习难度的合理性，但即使如此，真正
+                    决定课程效果的，还是你的每一次思考和实践。课程多数题目的
+                    解决方案都不是唯一的，这和我们在实际工作中的情况也是一致的。因此，我们的
+                    要求不仅仅是实现设计稿的效果，更是要多去思考不同的解决方案，评估不同方案
+                    的优劣，然后使用在该场景下最优雅的方式去实现。那些最终没有被我们采纳的
+                    方案，同样也可以帮助我们学到很多知识。所以，我们列出的参考资料未必是实
+                    现需求所必须的。有的时候，实现题目的要求很简单，甚至参考资料里就有，但
+                    是背后的思考和亲手去实践却是任务最关键的一部分。在学习这些资料时，要多
+                    思考，多提问，多质疑。相信通过和小伙伴们的交流，能让你的学习事半功倍。
+                </P>
+                <h4>2016春季班概述</h4>
+                <P>百度前端技术学院的课程任务是由百度前端工程师专为对前端不同掌握程度的同学
+                    设计。我们尽力保证课程内容的质量以及学习难度的合理性，但即使如此，真正
+                    决定课程效果的，还是你的每一次思考和实践。课程多数题目的
+                    解决方案都不是唯一的，这和我们在实际工作中的情况也是一致的。因此，我们的
+                    要求不仅仅是实现设计稿的效果，更是要多去思考不同的解决方案，评估不同方案
+                    的优劣，然后使用在该场景下最优雅的方式去实现。那些最终没有被我们采纳的
+                    方案，同样也可以帮助我们学到很多知识。所以，我们列出的参考资料未必是实
+                    现需求所必须的。有的时候，实现题目的要求很简单，甚至参考资料里就有，但
+                    是背后的思考和亲手去实践却是任务最关键的一部分。在学习这些资料时，要多
+                    思考，多提问，多质疑。相信通过和小伙伴们的交流，能让你的学习事半功倍。
+                </P>
+            </article>
+        </div>
+        <div class="column3">
+            <ul>
+               <li><span>成员一</span><img src="http://p1.bqimg.com/575033/194feb52b06a71b8.jpg"  alt="个人logo"></li>
+                <li><span>成员二</span><img src="http://p1.bqimg.com/575033/194feb52b06a71b8.jpg" alt="个人logo"></li>
+                <li> <span>成员三</span><img src="http://p1.bqimg.com/575033/194feb52b06a71b8.jpg" alt="个人logo"></li>
+                <li><span>成员四</span><img src="http://p1.bqimg.com/575033/194feb52b06a71b8.jpg" alt="个人logo"></li>
+            </ul>
+        </div>
+    </aside>
+</main>
+</body>
+</html>
