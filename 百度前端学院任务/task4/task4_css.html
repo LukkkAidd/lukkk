@@ -1,0 +1,26 @@
+body{
+margin:0;
+padding: 0;
+}
+main .main{
+position: absolute;left:50%;top:50%;
+width: 400px;
+height: 200px;
+background: #ccc;
+margin-top: -150px;
+margin-left: -200px;
+}
+main .main .left-top-area{
+border-radius: 0 0 50px 0;/*设置半径为50px的四分之一圆，表示右下部分的四分之一圆*/
+background: #fc0;
+width: 50px;
+height: 50px;
+position: absolute;/*使用绝对位置定位到左上角*/
+}
+main .main .right-bottom-area{
+border-radius: 50px 0 0 0 ;/*设置半径为50px的四分之一圆，表示左上部分的四分之一圆*/
+background: #fc0;
+width: 50px;
+height: 50px;
+position: absolute;right: 0px;bottom: 0px;
+}
