@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        body{
+            width: 99%;
+            /*如果是100%的话，在浏览器页面超出最小宽度设定值后，还是会出现下标的滑动条*/
+            min-width: 1280px;
+            padding: 0;
+            margin: 0;
+        }
+        /*以上是body部分********************************/
+        header{
+            height: 60px;
+            position: relative;
+            padding: 0 20px;
+            min-width: 1280px;
+            /*要具体在某一块元素设置才会产生效果，否则，盒子里的元素会一直自适应浏览器的大小*/
+        }
+        header .right{
+            height: 60px;
+            width: 150px;
+            text-align: center;
+            padding: 10px;
+        }
+        header .right h2{
+            float: right;
+            margin:5px 0 0 -35px ;
+            font-size: 21px;
+            font-family: "黑体", sans-serif;
+            color: #393e3a;
+        }
+        header .nav{
+            position: absolute;right: 180px;top:-20px;
+        }
+        header .nav li{
+            list-style-type: none;
+            display: block;
+            width: 100px;
+            float: left;
+            /*让元素内联变成一条直线,用display:inline-block也可以实现*/
+            font-size: 14px;
+            font-family: "Microsoft YaHei",serif;
+            text-align: center;
+        }
+        header .nav li a{
+            width: 100px;
+            height: 60px;
+            line-height: 60px;
+            text-decoration: none;
+            /*去掉链接的下划线***************************/
+            font-family: "Microsoft YaHei",serif;
+            color:#2e2e2e;
+        }
+        header .nav li:hover{
+            border-bottom: 3px solid #f74f4d;
+            background:#ECE9E9;
+        }
+        header .login{
+            height: 60px;
+            text-align: right;
+            position: absolute;right: 60px;top:15px;
+            font-size: 14px;
+            font-family: "Microsoft YaHei",serif;
+            color: #e95e5c;
+        }
+        header .login p{
+            float: right;
+            margin-left: 10px;
+            margin-top: 0;
+        }
+        header .login p a{
+            font-family: "Microsoft YaHei",serif;
+            color: #e95e5c;
+            text-decoration: none;
+        }
+        /*以上是header部分的代码********************************************/
+        main .box1{
+            height: 690px;
+            position: relative;
+            margin-top: 0;
+            width: 100%;
+            background: url("http://p1.bpimg.com/575033/899c3120d2597036.png" );
+            background-size: cover;
+            /*background-size可以让背景图片的尺寸达到浏览器横屏满屏的效果，如果要想达到
+            充满整个电脑屏幕，比如3个主显示屏的时候，需要使用其他方法*/
+        }
+        main .box1 .article{
+            height: 200px;
+            width: 100%;
+            padding-top: 170px;
+            /*不设置共同缩进是为了避免在<p>开始体验</p>这一段的文字也会随着缩进*/
+
+        }
+        main .box1 .time{
+            font-size: 60px;
+            font-family: "Microsoft YaHei",serif;
+            color: #ffffff;
+            text-indent: 120px;
+        }
+        main .box1 .new{
+            font-size: 21px;
+            font-family: "Microsoft YaHei",serif;
+            color: #ffffdf;
+            margin-top: -50px;
+            text-indent: 120px;
+        }
+        main .box1 .enjoy{
+            font-size: 21px;
+            font-family: "Microsoft YaHei",serif;
+            color: #ffffdf;
+            margin-top: -15px;
+            text-indent: 120px;
+        }
+        main .box1 .start{
+            font-size: 30px;
+            width: 300px;
+            height: 60px;
+            line-height: 60px;
+            background: #e74f4d;
+            text-align: center;
+            margin-left: 120px;
+            border-radius: 10px;
+            border: none;
+            /*设置半径为10px的无边框圆****************************/
+        }
+        main .box1 div .start a{
+            text-decoration: none;
+            font-family: "Microsoft YaHei",serif;
+            color: #ffffff;
+        }
+        /*box1部分*************************************************/
+        main .box2{
+            width: 100%;
+            display: block;
+            position: relative;
+            height: 200px;
+            min-width: 1280px;
+        }
+        main .box2 .picture1,.picture2,.picture3,.picture4{
+            height: 400px;
+            display: block;
+            width: 23%;
+            color: #9b9b9b;
+            font-family: "黑体", sans-serif;
+        }
+        main .box2 .picture1{
+            text-align: center;
+            padding-top: 30px;
+        }
+        main .box2 .picture1 p{
+            margin-top: 30px;
+            color: #767777;
+            height: 60px;
+            border-right: 2px solid #aaaaaa;
+        }
+        main .box2 .picture2{
+            text-align: center;
+            margin-left: 25%;
+            margin-top: -400px;
+        }
+        main .box2 .picture2 p{
+            margin-top: 30px;
+            color: #767777;
+            height: 60px;
+            border-right: 2px solid #aaaaaa;
+        }
+        main .box2 .picture3{
+            text-align: center;
+            margin-left: 50%;
+            margin-top: -400px;
+        }
+        main .box2 .picture3 p{
+            margin-top: 30px;
+            color: #767777;
+            height: 60px;
+            border-right: 2px solid #aaaaaa;
+        }
+        main .box2 .picture4{
+            text-align: center;
+            margin-left: 75%;
+            margin-top: -400px;
+        }
+        main .box2 .picture4 p{
+            margin-top: 30px;
+            color: #767777;
+            height: 60px;
+
+        }
+        /*以上为box2代码****************************************/
+        main .box3 {
+            width: 100%;
+            min-width: 1280px;
+            height: 280px;
+            text-align: center;
+            color: #a1a1a1;
+            font-family: "黑体", sans-serif;
+            font-size: 55px;
+            padding-top: 100px;
+            background: #edecec;
+        }
+        main .box3 p{
+            margin-top: 30px;
+        }
+        /*以上是box3的代码********************************************/
+        main .box4{
+            display: block;
+            width: 100%;
+            min-width: 1280px;
+            height: 341px;
+            font-family: "Microsoft YaHei",serif;
+            background: url("http://p1.bpimg.com/575033/d247097ae14d9eb6.png");
+            background-size: cover;
+            text-align: center;
+            position: relative;
+            margin-top: -20px;
+        }
+        main .box4 .articlebox4 .p1{
+            padding-top:90px;
+            font-size: 21px;
+            color: #ffffff;
+        }
+        main .box4 .articlebox4 .p1 span{
+            font-size: 30px;
+        }
+        main .box4 .p2{
+            font-size: 12px;
+            color: #ede8e8;
+            margin-top: -20px;
+        }
+        main .box4 .totle{
+            padding-left: 140px;
+            margin-top: 60px;
+        }
+        main .box4  select{
+            float: left;
+            /*在这里用浮动，则是3个框架练成一条线*/
+            width: 20%;
+            height: 40px;
+            background: #ffffff;
+            padding-left: 40px;
+            border: 1px solid #d45d5c;
+            margin-left: 20px;
+        }
+        main .box4 select:hover{
+            background: #cccccc;
+        }
+        main .box4 .button .submitbuttom{
+            height: 40px;
+            width: 18%;
+            text-align: center;
+            font-size: 20px;
+            color: #ffffff;
+            background: #bf4f48;
+            border-radius: 10px;
+            border: none;
+            margin-left: -140px;
+        }
+        /*必须是用input里的class来设置，否者没有效果*****/
+        main .box4 .button .submitbuttom:hover{
+            background: #d45d5c;
+        }
+        /*以上是box4的代码***********************************/
+        main .box5{
+            width: 100%;
+            min-width: 1280px;
+            height: 605px;
+            position: relative;
+            font-family: "Microsoft YaHei",serif;
+            color: #2e2e2e;
+            font-size: 14px;
+        }
+        main .box5 span{
+            font-size: 12px;
+            color: #aaaaaa;
+        }
+        main .box5 .shanghai .shanghaistyle{
+            font-size: 20px;
+        }
+        main .box5 div{
+            display: block;
+            height: 410px;
+            width: 18%;
+            text-align: center;
+            float: left;
+            margin-left: 30px;
+            padding: 100px 0;
+        }
+        /*以上是BOX5部分代码************************************/
+        main .box5 .beijing{
+            margin-left: 200px;
+        }
+        main .box6{
+            width: 100%;
+            min-width: 1280px;
+            height: 867px;
+            position: relative;
+
+        }
+        main .box6 .right{
+            height: 867px;
+            position: relative;
+            width: 68%;
+            min-width: 867px;
+            margin-top: 0;
+            margin-left: 0;
+            background: url("http://p1.bpimg.com/575033/8d64fa4fc2a6803a.png");
+            background-size: cover;
+            text-align: center;
+            color: #ffffff;
+            font-family: "Microsoft YaHei",serif;
+        }
+        main .box6 .right h2{
+            padding-top:170px;
+            font-size: 50px;
+        }
+        main .box6 .right p{
+            font-size: 22px;
+            margin-top: -70px;
+        }
+        main .box6 .right .time{
+            font-size: 158px;
+        }
+        main .box6 .right .new{
+            line-height: 50px;
+            margin-top: -160px;
+        }
+        main .box6 .left{
+            float: right;
+            width: 30%;
+            min-width: 382px;
+            text-align: center;
+            height: 861px;
+            margin-top: -867px;
+            margin-right: 10px;
+            border: 1px solid #00A000;
+        }
+        main .box6 .left .new-world{
+            width: 28%;
+            min-width: 358px;
+            margin: 0 auto;
+            /*如果这里不用margin：0 auto；居中，用其他方法则会造成文字因为适应屏幕宽度的时候溢出的现象*/
+            margin-top: 250px;
+        }
+        main .box6 .left .new-world h2{
+            font-family: "Microsoft YaHei",serif;
+            font-size: 22px;
+            color: #000000;
+            vertical-align: middle;
+        }
+        main .box6 .left .new-world h2 span{
+            color: #FF0000;
+        }
+        main .box6 .left .new-world .world{
+            text-align: left;
+        }
+        main .box6 .left div .world span{
+            font-size: 12px;
+            font-family: "宋体", serif;
+            color: #aaaaaa;
+            line-height: 40px;
+        }
+        main .box6 .left .more{
+            width: 150px;
+            height: 30px;
+            line-height: 30px;
+            font-size: 20px;
+            color: #d45d5c;
+            margin: 0 auto;
+
+        }
+        main .box6 .left .more .detail{
+            border-radius: 10px;
+            border: none;
+            background: #e95e5c;
+        }
+        main .box6 .left .more  a{
+            text-decoration: none;
+        }
+        /*以上是box6的代码********************************/
+        main .box7{
+            width: 100%;
+            min-width: 1280px;
+            height: 521px;
+            margin-top: -21px;
+        }
+        main .box7 img{
+            height: 521px;
+            width: 32%;
+            min-width: 384px;
+            float: right;
+            margin-top: -521px;
+
+        }
+        main .box7 .new-time{
+            height: 521px;
+            width: 68%;
+            min-width: 832px;
+        }
+        main .box7 .new-time1{
+            height: 319px;
+            padding-top: 200px;
+            /*这里用不了vertical-align:middle(垂直位置居中)？,只能通过填充来实现，
+            填充要想保留原本盒子的高度，则需要相应的减少高度的初始值，减少量与填充量相等*/
+            width: 50%;
+            min-width: 414px;
+            border: 1px solid #00A000;
+            background: #e95e5c;
+            background-size:cover;
+            text-align: center;
+            font-size: 21px;
+            font-family: "黑体", sans-serif;
+            color: #ffffff;
+            /*添加边框主要是为了检查盒子位置大小，是否正确*/
+        }
+        main .box7 .new-time2{
+            height: 319px;
+            width: 50%;
+            margin-left: 50%;
+            min-width: 414px;
+            margin-top: -542px;
+            border: 1px solid #BB6622;
+            text-align: center;
+            font-size: 21px;
+            padding-top: 200px;
+            font-family: "黑体", sans-serif;
+            color: #2e2e2e;
+        }
+        main .box7 .new-time1 span{
+            border: 1px solid #ffffff;
+        }
+        main .box7 .new-time2 span{
+            border: 1px solid #e95e5c;
+            color: #e95e5c;
+        }
+        /*以上是box7的代码********************************/
+        main .box8 {
+            width: 100%;
+            min-width: 1280px;
+            height: 230px;
+            border: 1px solid #00A000;
+            text-align: center;
+            padding-top: 120px;
+        }
+        main .box8 h2{
+            font-size: 21px;
+            color: #323333;
+            font-family: "黑体", sans-serif;
+        }
+        main .box8 h2 span{
+            color: red;
+        }
+        main .box8 p{
+            font-size: 12px;
+            color: #aaaaaa;
+            font-family: "Microsoft YaHei",serif;
+        }
+        /*以上是box8的代码********************************/
+        main .box9{
+            width: 78%;
+            min-width: 1000px;
+            position: relative;
+            height: 500px;
+            margin-left: 10%;
+            margin-right: 10%;
+            border: 1px solid #00A000;
+        }
+        main .box9 .left-words{
+            width: 39%;
+            min-width:398px;
+            height: 498px;
+            border: 1px solid #00A000;
+            font-size: 14px;
+            color: #231815;
+            font-family: "黑体", sans-serif;
+        }
+        main .box9 .left-words .left-words-top{
+            height: 149px;
+            border-bottom:1px solid #00A000 ;
+        }
+        main .box9 .left-words .left-words-middle{
+            height: 149px;
+            border-bottom:1px solid #00A000 ;
+        }
+        main .box9 .left-words .left-words-buttom{
+            height: 99px;
+            border-bottom:1px solid #00A000 ;
+        }
+        main .box9 .left-words p{
+            font-family: "宋体", serif;
+            color: #aaaaaa;
+            font-size: 12px;
+        }
+        main .box9 .left-words .contact{
+            float: right;
+            border: 1px solid #00A000;
+            margin-right: 10px;
+        }
+        main .box9 .left-words .contact a{
+            text-decoration: none;
+        }
+        main .box9 .right-form{
+            width: 60%;
+            min-width: 596px;
+            height: 498px;
+            border: 1px solid #00A000;
+            float: right;
+            margin-top: -500px;
+        }
+        main .box9 .right-form input::-webkit-input-placeholder {
+            /* WebKit browsers */
+            color:#2e2e2e;
+            font-family: "黑体", sans-serif;
+            }
+        　　main .box9 .right-form  input:-moz-placeholder {
+            /* Mozilla Firefox 4 to 18 */
+            color:#999;font-family: "黑体", sans-serif;
+            }
+        　　main .box9 .right-form  input::-moz-placeholder {
+            /* Mozilla Firefox 19+ */  color:#2e2e2e;
+            font-family: "黑体", sans-serif;
+            }
+        　　main .box9 .right-form  input:-ms-input-placeholder {
+            /* Internet Explorer 10+ */  color:#2e2e2e;
+            font-family: "黑体", sans-serif;
+            }
+        /*这一整块是给占位符修改样式，并且兼容各类主流浏览器的代码***/
+        main .box9 .right-form .left-top-form{
+            width: 48%;
+            min-width: 148px;
+            height:48px;
+            border: 1px solid #00A000;
+            border-radius: 10px;
+            background: #ededef;
+        }
+        main .box9 .right-form .left-top-form input{
+            font-size: 20px;
+            text-indent: 1em;
+            border: 1px solid #00A000;
+            border-radius: 10px;
+            background: #ededef;
+            height: 46px;
+            width: 100%;
+            min-width: 270px;
+            /*文本输入框不能随浏览器自适应宽度，不能设置成百分比，只能是具体数值**/
+        }
+        main .box9 .right-form .change-color:hover{
+            background: #ffffff;
+        }
+        main .box9 .right-form  .right-top-form{
+            float: right;
+            width: 48%;
+            min-width: 148px;
+            height:46px;
+            border: 1px solid #00A000;
+            border-radius: 10px;
+            margin-top: -50px;
+            background: #ededef;
+            margin-right: 10px;
+        }
+        main .box9 .right-form .right-top-form input {
+            font-size: 20px;
+            text-indent: 1em;
+            border: 1px solid #00A000;
+            border-radius: 10px;
+            height: 44px;
+            width: 100%;
+            min-width: 270px;
+            background: #ededef;
+        }
+        main .box9 .right-form .left-middle-form{
+            width: 48%;
+            min-width: 148px;
+            height:48px;
+            border: 1px solid #00A000;
+            border-radius: 10px;
+            margin-top: 30px;
+            background: #ededef;
+        }
+        main .box9 .right-form .left-middle-form input{
+            font-size: 20px;
+            text-indent: 1em;
+            border: 1px solid #00A000;
+            border-radius: 10px;
+            background: #ededef;
+            height: 44px;
+            width: 100%;
+            min-width: 270px;
+            /*文本输入框不能随浏览器自适应宽度，不能设置成百分比，只能是具体数值**/
+        }
+        main .box9 .right-form  .right-middle-form{
+            float: right;
+            width: 48%;
+            min-width: 148px;
+            height:48px;
+            border: 1px solid #00A000;
+            border-radius: 10px;
+            margin-top: -50px;
+            background: #ededef;
+            margin-right: 10px;
+        }
+        main .box9 .right-form .right-middle-form input{
+            font-size: 20px;
+            text-indent: 1em;
+            border: 1px solid #00A000;
+            background: #ededef;
+            height: 44px;
+            width:100%;
+            min-width: 270px;
+            border-radius: 10px;
+        }
+
+        main .box9 .right-form .middle-form{
+            width: 99%;
+            min-width:598px;
+            height:248px;
+            border: 1px solid #00A000;
+            border-radius: 10px;
+            margin-top: 20px;
+            background: #ededef;
+        }
+        main .box9 .right-form .middle-form .dream{
+            font-size: 20px;
+            text-indent: 1em;
+            width: 99%;
+            min-width:598px;
+            border-radius: 10px;
+            height:244px;
+            font-family: "黑体", sans-serif;
+            color: #2e2e2e;
+            background: #ededef;
+        }
+        main .box9 .right-form .middle-form .dream:hover{
+            background: #ffffff;
+        }
+        main .box9 .bottom-form{
+            width: 99%;
+            min-width:594px;
+            height:48px;
+            border: 3px solid #AEBDCC;
+            border-radius: 10px;
+            text-align: center;
+            margin-top: 20px;
+            background: #AEBDCC;
+        }
+        main .box9 .bottom-form .bottom-button{
+            width: 100%;
+            min-width:598px;
+            height:48px;
+            border: 1px solid #00A000;
+            background: #ededef;
+            border-radius: 10px;
+            font-size: 20px;
+            font-family: "黑体", sans-serif;
+        }
+        main .box9 .bottom-form .bottom-button:hover{
+            background: #55A0E6;
+        }
+        /*以上是box9的代码，但是存在许多问题**********************************/
+        main .box10{
+            width: 100%;
+            min-width: 1280px;
+            height: 498px;
+            border: 1px solid #00A000;
+            background: #2e2e2e;
+            text-align: center;
+            font-size: 21px;
+            color: #ffffff;
+            font-family: "黑体", sans-serif;
+        }
+        main .box10 .article{
+            margin-top: 80px;
+            border: 1px solid #00A000;
+
+        }
+        main .box10 p{
+            color: #9b9b9b;
+        }
+        main .box10 form{
+            border: 1px solid #00A000;
+            height: 50px;
+
+        }
+        main .box10 .box10-text{
+            height: 48px;
+            width: 35%;
+            min-width:450px;
+            border: 1px solid #00A000;
+            text-indent: 1em;
+            margin-right: -10px;
+            font-size: 19px;
+            font-family: "黑体", sans-serif;
+            color: #9b9b9b;
+        }
+        main .box10 .button-box10{
+            height: 49px;
+            width: 8%;
+            min-width: 80px;
+            border: 1px solid #aaaaaa;
+            font-size: 20px;
+            font-family: "黑体", sans-serif;
+            color: #ffffff;
+            background: #aaaaaa;
+        }
+        main .box10 .friends-web{
+            height: 150px;
+            border: 1px solid #00A000;
+            line-height: 150px;
+
+        }
+        main .box10 .friends-web .tencent{
+            border: 1px solid #00A000;
+            margin-right: 15px;
+        }
+        main .box10 .friends-web .sina{
+            border: 1px solid #00A000;
+            margin-right: 15px;
+        }
+        main .box10 .friends-web .bird{
+            border: 1px solid #00A000;
+            margin-right: 15px;
+        }
+        main .box10 .friends-web .earth{
+            border: 1px solid #00A000;
+            margin-right: 15px;
+        }
+        /*以上是box10的代码******************************************/
+        footer{
+            border: 1px solid #408080;
+            height: 80px;
+            background: #5a5b5c;
+        }
+        footer p{
+            font-size: 20px;
+            color: #ffffff;
+            border: 1px solid #00A000;
+            margin-top:30px;
+        }
+        footer p span{
+            float: right;
+        }
+        footer p span a{
+            text-decoration:none;
+            color: #ffffff;
+        }
+        /*以上是footer的代码*********************************************/
+    </style>
+</head>
+<body>
+    <header>
+        <div class="right">
+            <img  src="http://p1.bpimg.com/575033/bf455599971a9de8.png">
+            <h2>新世界</h2>
+        </div>
+        <div class="nav">
+            <ul>
+                <li><a  href="task7.html">首页</a></li>
+                <li><a href="task7.html">最新活动</a></li>
+                <li><a href="task7.html">项目介绍</a></li>
+                <li><a href="task7.html">爱心社区</a></li>
+                <li><a href="task7.html">关于我们</a></li>
+            </ul>
+        </div>
+        <div class="login">
+            <a href="task7.html"><img src="http://p1.bpimg.com/575033/031f9efe3a7c81c1.png"></a>
+            <P><a class="button"  href="task7.html">登录</a></P>
+        </div>
+    </header>
+    <main>
+        <div class="box1">
+            <div class="article">
+                <p class="time">Time of new life</p>
+                <p class="new">新时代，年轻的人们让我们一起</p>
+                <P class="enjoy">体验生活，享受生活</P>
+                <div><p class="start"><a href="task7.html">开始体验</a></p></div>
+            </div>
+        </div>
+        <div class="box2">
+            <div class="picture1">
+                <img src="http://p1.bpimg.com/575033/73be969539ad35b0.png">
+                <p>打造全新世界观，让你更<br>爱你的生活</p>
+            </div>
+            <div class="picture2" >
+                <img src="http://p1.bpimg.com/575033/3d3545c12f75e590.png">
+                <p>丰富多彩的公益活动，发<br>挥新世界的主人公意识</p>
+            </div>
+            <div class="picture3">
+                <img src="http://p1.bpimg.com/575033/5394dd1e6da58d50.png">
+                <p>时尚的新理念，超前体验<br>未知的生活</p>
+            </div>
+            <div class="picture4" >
+                <img src="http://p1.bpimg.com/575033/cf6100ed89f22874.png">
+                <p>完善的培养机制，培养你<br>全新的世界观</p>
+            </div>
+        </div>
+        <div class="box3">
+            <img src="http://p1.bpimg.com/575033/f8287ffdb84042a6.png">
+            <p>关于新世界，你不知道的还有什么？</p>
+        </div>
+        <div class="box4">
+            <div class="articlebox4">
+                <p class="p1">查找新世界城市活动信息<br><span>一</span></p>
+                <p class="p2">每个城市有不同的活动信息，请自主查询您所需要了解的城市</p>
+            </div>
+            <div class="totle">
+                <form class="country">
+                        <select>
+                            <option value="国家" selected="selected">国家</option>
+                            <option value="中国">中国</option>
+                            <option value="美国">美国</option>
+                            <option value="法国">法国</option>
+                            <option value="德国">德国</option>
+                            <!--option:表示选项；selected表示默认选项 -->
+                        </select>
+                </form>
+                <form class="province">
+                        <select>
+                            <option value="省份" selected="selected">省份</option>
+                            <option value="北京市">北京市</option>
+                            <option value="河北省">河北省</option>
+                            <option value="广东省">广东省</option>
+                            <option value="广西省">广西省</option>
+                            <!--option:表示选项；selected表示默认选项 -->
+                        </select>
+                </form>
+                <form class="city">
+                        <select>
+                            <option value="城市" selected="selected">城市</option>
+                            <option value="北京">北京</option>
+                            <option value="上海">上海</option>
+                            <option value="深圳">深圳</option>
+                            <option value="广州">广州</option>
+                            <!--option:表示选项；selected表示默认选项 -->
+                        </select>
+                </form>
+                <div class="button">
+                    <form  method="post" action="save.php">
+                        <input type="submit"  class="submitbuttom" value="搜索"/>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <div class="box5">
+            <div class="beijing">
+                <img src="http://p1.bpimg.com/575033/456da0e9ae601450.png">
+                <p>北京活动</p>
+                <P><span>新社区大联盟</span></P>
+            </div>
+            <div class="shanghai">
+                <p class="shanghaistyle">上&emsp;&emsp;海&emsp;&emsp;活&emsp;&emsp;动</p>
+                <P><span>夜上海新景观探索</span></P>
+                <img src="http://p1.bpimg.com/575033/ca4127a9b21cf38f.png">
+            </div>
+            <div class="shenzhen">
+                <img src="http://p1.bpimg.com/575033/e30304f927597990.png">
+                <p>深圳活动</p>
+                <P><span>全新海岸线观点站</span></P>
+            </div>
+            <div class="hongkong">
+                <img src="http://p1.bpimg.com/575033/67c0dfe6f65d2f53.png">
+                <p>香港活动</p>
+                <P><span>奢侈消费大派送</span></P>
+            </div>
+        </div>
+        <div class="box6">
+            <div class="right">
+                <h2>新世界</h2>
+                <P class="time">TIME</P>
+                <P class="new">@新世界 - 北京<br>2016.04.01</P>
+            </div>
+            <div class="left">
+                <div class="new-world">
+                    <h2>新世界/<span>01</span></h2>
+                    <p class="world"><span>新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个新世界是个</span></p>
+                </div>
+                <div class="more">
+                    <p class="detail"><a href="task7.html">更多详情</a></p>
+                </div>
+            </div>
+        </div>
+        <div class="box7">
+            <div class="new-time">
+                <p class="new-time1">新时代<br>关于爱生活的我们<br><br>━<br><br><span>查看更多</span></p>
+                <p class="new-time2">新时代<br>关于爱生活的我们<br><br>━<br><br><span>查看更多</span></p>
+            </div>
+            <img src="http://p1.bpimg.com/575033/1b23b8cd8afb64bc.png">
+        </div>
+        <div class="box8">
+            <h2>成为我们的志愿者<br><span>━</span></h2>
+            <p>新世界的大家庭需要每一个爱生活的人加入，如果你够年轻，有梦想，有激情<br>那就不要犹豫，快来加入我们，成为改变所有人生活的人</p>
+        </div>
+        <div class="box9">
+            <div class="left-words">
+                <div class="left-words-top" >
+                    <h2>新世界志愿者协议</h2>
+                    <P>加入新世界志愿者的人员必须遵守中华人民共和国的相关法律法规，并且本着平等自愿的原则........</P>
+                    <P class="contact">
+                        <a href="task7.html"><img src="http://p1.bpimg.com/575033/3ab2cfd8fa9278e1.png"> more</a>
+                    </P>
+                </div>
+                <div class="left-words-middle">
+                    <h2>新世界志愿者权利</h2>
+                    <P>新世界志愿者享受新世界内部所有资源共享的权利，并且享受所在市新世界活动的优先参与资格........</P>
+                    <P class="contact">
+                        <a href="task7.html"><img src="http://p1.bpimg.com/575033/3ab2cfd8fa9278e1.png"> more</a>
+                    </P>
+                </div>
+                <div class="left-words-buttom">
+                    <h2>更多条款</h2>
+                    <P class="contact">
+                        <a href="task7.html"><img src="http://p1.bpimg.com/575033/3ab2cfd8fa9278e1.png"> more</a>
+                    </P>
+                </div>
+            </div>
+            <div class="right-form">
+                <form class="name" action="save.php" method="post">
+                    <div class="left-top-form" >
+                        <input type="text"  placeholder="姓名：" class="change-color" >
+                    </div>
+                    <div class="right-top-form" >
+                        <input type="text"  placeholder="年龄：" class="change-color">
+                    </div>
+                    <div class="left-middle-form" >
+                        <input type="text"  placeholder="联系方式：" class="change-color">
+                    </div>
+                    <div class="right-middle-form" >
+                        <input type="text" placeholder="联系地址：" class="change-color">
+                    </div>
+                    <div class="middle-form">
+                        <textarea class="dream">请简单描述您梦想的生活</textarea>
+                    </div>
+                    <div class="bottom-form">
+                        <input type="submit" class="bottom-button" value="提交申请"/>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <div class="box10">
+            <div class="article">
+                <h2>联系我们</h2>
+                <p>为了更好的获取我们最新的产品资讯，您可以留下您的电子邮箱快速订阅我们的产品资讯<br>也可以通过以下任何方式关注我们的动态</p>
+            </div>
+            <form>
+                <input type="text" placeholder="luqingquan66@sina.com" class="box10-text">
+                <input type="button" value="提交" class="button-box10">
+            </form>
+            <div class="friends-web">
+                <a href="https://www.qq.com/" ><img class="tencent" src="http://p1.bpimg.com/575033/4e015154e1906d8a.png"></a>
+                <a href="https://www.sina.com"><img class="sina" src="http://p1.bpimg.com/575033/9a875b544ba23819.png"></a>
+                <a href="task7.html"><img class="bird" src="http://p1.bpimg.com/575033/5e10b1243558277d.png"></a>
+                <a href="task7.html"><img class="earth" src="http://p1.bpimg.com/575033/a9b22f45c591b1a6.png"></a>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <P>@2016新世界<span><a href="task7.html">back to top</a></span></P>
+    </footer>
+</body>
+</html>
